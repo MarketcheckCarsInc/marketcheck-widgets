@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+
+/* THEME */
+._mcw_tom_container {
+  display: inline-block;
+}
+._mcw_tom_title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Rubik", "sans-serif";
+  padding: 0.5rem 0rem;
+  color: #333;
+}

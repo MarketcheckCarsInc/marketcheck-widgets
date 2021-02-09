@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* THEME */
+
+._mcw_cb_container {
+  display: inline-block;
+  color: #333;
+  padding: 0.5em;
+  width: 400px;
+  min-width: 280px;
+  font-family: "Rubik", "sans-serif";
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px 2px rgba(155, 155, 155, 0.4);
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 413px) {
+  ._mcw_cb_container {
+    width: 100%;
+  }
+}
+
+._mcw_cb_title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 0.4rem;
+}
+
+._mcw_cb_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+._mcw_cb_row:last-child {
+  border: none;
+}
+
+._mcw_cb_label {
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+._mcw_cb_value {
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 900";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.svg#fontawesome")
+      format("svg");
+}
+._mcw_cb_icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(77, 77, 77);
+}
+
+._mcw_cb_car:before {
+  font-family: "Font Awesome 5 900";
+  content: "\f1b9";
+  padding-right: 10px;
+  font-size: 1em;
+}
+
+._mcw_cb_arrow:before {
+  content: "\f105";
+  font-family: "Font Awesome 5 900";
+  padding-right: 10px;
+  font-size: 1em;
+}

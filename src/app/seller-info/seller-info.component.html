@@ -1,0 +1,58 @@
+<ng-container *ngIf="version == '1'">
+  <div class="_mcw_si_container">
+    <div class="_mcw_si_title">
+      {{ displayProperties.name }}
+    </div>
+
+    <div class="_mcw_si_website">
+      {{ displayProperties.domain }}
+      <a
+        [href]="'//' + displayProperties.domain"
+        target="_blank"
+        title="visit dealer"
+      >
+        <i class="_mcw_si_icon _mcw_si_share"></i
+      ></a>
+    </div>
+
+    <div class="_mcw_si_rating_container">
+      <div>
+        <span class="_mcw_si_rating">{{ displayProperties.rating }}</span>
+        <ng-container *ngFor="let i of displayProperties.custom">
+          <i class="_mcw_si_icon {{ i }}"></i>
+        </ng-container>
+        <span class="_mcw_si_ratings_count"
+          >( {{ displayProperties.user_ratings_total }} )</span
+        >
+      </div>
+      <div style="border: 1px solid #d2d2d2"></div>
+      <div>
+        <a
+          [href]="displayProperties.maps_url"
+          target="_blank"
+          style="text-decoration: none"
+          title="show reviews"
+          ><span>{{ displayProperties.reviews }} reviews</span></a
+        >
+      </div>
+    </div>
+
+    <div class="_mcw_si_more_info">
+      <div class="_mcw_si_address">
+        <div style="display: flex">
+          <i class="_mcw_si_icon _mcw_si_location"></i>
+          {{ displayProperties.street }}, {{ displayProperties.city }},
+          {{ displayProperties.state }} {{ displayProperties.zip }},
+          {{ displayProperties.country }}
+        </div>
+      </div>
+
+      <div class="_mcw_si_contact">
+        <div style="display: flex">
+          <i class="_mcw_si_icon _mcw_si_phone"></i>
+          {{ displayProperties.phone }}
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

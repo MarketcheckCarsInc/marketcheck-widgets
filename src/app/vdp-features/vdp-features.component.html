@@ -1,0 +1,45 @@
+<ng-container *ngIf="version == '1'">
+  <div class="_mcw_cf_container">
+    <div class="_mcw_cf_title">
+      <span>
+        <i class="_mcw_cf_icon _mwc_cf_carside"></i>
+        {{ title }}
+      </span>
+    </div>
+    <div class="_mcw_cf_features_container">
+      <div
+        *ngIf="!features"
+        style="text-align: left; width: 100%; font-size: 1.5rem"
+      >
+        Features not available !
+      </div>
+      <div class="_mcw_cf_col">
+        <ul class="_mcw_cf_features" [ngClass]="{ _mcw_show: show }">
+          <ng-container *ngFor="let f of features; let i = index">
+            <li class="_mcw_cf_feature" *ngIf="i % 2 == 0">
+              {{ f }}
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+      <div class="_mcw_cf_col">
+        <ul class="_mcw_cf_features" [ngClass]="{ _mcw_show: show }">
+          <ng-container *ngFor="let f of features; let i = index">
+            <li class="_mcw_cf_feature" *ngIf="i % 2 == 1">
+              {{ f }}
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <button
+      class="_mcw_cf_btn_show_more"
+      title="Show More"
+      (click)="showMore()"
+      *ngIf="features"
+    >
+      {{ show ? "Show Less" : "Show More" }}
+    </button>
+  </div>
+</ng-container>

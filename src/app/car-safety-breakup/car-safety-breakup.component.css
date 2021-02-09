@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* THEME */
+
+._mcw_csb_container {
+  display: inline-block;
+  font-family: "Rubik", "sans-serif";
+  font-weight: 350;
+  color: rgb(87, 87, 87);
+  border: 1px solid #f1f1f1;
+  box-shadow: 0px 0px 2px 1px rgb(87, 87, 87, 0.1);
+  font-size: 0.9rem;
+}
+
+._mcw_csb_head {
+  width: 100%;
+  text-align: center;
+}
+
+._mcw_csb_ratings_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+._mcw_csb_rating {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 900";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.svg#fontawesome")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 400";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.svg#fontawesome")
+      format("svg");
+}
+
+._mcw_csb_icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.1rem;
+  vertical-align: baseline;
+  padding-bottom: 0.3rem;
+}
+
+._mcw_csb_star::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f005";
+  color: #f9bc05;
+}
+._mcw_csb_star_half::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f5c0";
+  color: #f9bc05;
+}
+
+._mcw_csb_star_border::before {
+  font-family: "Font Awesome 5 400";
+  content: "\f005";
+  color: #727272;
+}

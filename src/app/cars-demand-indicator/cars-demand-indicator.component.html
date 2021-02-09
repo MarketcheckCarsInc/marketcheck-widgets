@@ -1,0 +1,22 @@
+<ng-container *ngIf="version == '1'">
+<div class="_mcw_cd_container " [ngClass]='{"_mcw_cd_horizontal" : orientation === "horizontal",
+ "_mcw_cd_vertical" : orientation === "vertical" }'>  
+
+    <div class="_mcw_cd_section" >
+      <span class="_mcw_cd_values" >{{ displayProperties.inv_count }}</span>
+      <div class="_mcw_cd_label" >Available Units</div>
+    </div>
+    
+    <div class="_mcw_cd_section" >
+      <span class="_mcw_cd_values" >{{ displayProperties.mds }}</span>
+      <div class="_mcw_cd_label" >Market Days Supply</div>
+    </div>
+
+    <div class="_mcw_cd_section" >
+        <span class="_mcw_cd_values" >{{ displayProperties.sold_count }}</span>
+        <div class="_mcw_cd_label" >Sold Units <span class="_mcw_cd_opt">(past 45 days)</span></div>
+    </div>
+
+</div>
+
+</ng-container>

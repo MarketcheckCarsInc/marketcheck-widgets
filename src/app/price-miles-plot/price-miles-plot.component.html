@@ -1,0 +1,25 @@
+<ng-container *ngIf="version == '1'">
+  <div class="_mcw_pmp_container">
+    <div class="_mcw_pmp_legend_container">
+      <div>
+        <span style="font-size: 10px" #nationalAvgLegend>⬤</span>
+        <span (click)="updateChart($event.target, 'nationalavg')">
+          National Average
+        </span>
+      </div>
+      <div>
+        <span style="font-size: 10px" #similarCarLegend>⬤</span>
+        <span (click)="updateChart($event.target, 'similarcars')">
+          {{ similarListingsSet.length || "" }} Similar Cars
+        </span>
+      </div>
+      <div>
+        <span style="font-size: 10px" #thisCarLegend>⬤</span>
+        <span (click)="updateChart($event.target, 'thiscar')">
+          this Car {{ vin }}
+        </span>
+      </div>
+    </div>
+    <canvas #canvas></canvas>
+  </div>
+</ng-container>

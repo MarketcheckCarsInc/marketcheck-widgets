@@ -1,0 +1,16 @@
+<ng-container *ngIf="version == '1'">
+<div class="_mcw_cb_container">
+  <div class="_mcw_cb_title">
+    <i class="_mcw_cb_icon _mcw_cb_car"></i>
+    {{title}}
+  </div>
+  
+  <div class="_mcw_cb_row" *ngFor="let item of displayproperties| keyvalue">
+    <div class="_mcw_cb_label">
+      <i class="_mcw_cb_icon _mcw_cb_arrow"></i>
+      {{item.key || 'N/A'}}
+    </div>
+    <div class="_mcw_cb_value">{{ item.value || 'N/A' }}</div>
+  </div>
+</div>
+</ng-container>

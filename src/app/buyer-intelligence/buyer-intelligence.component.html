@@ -1,0 +1,45 @@
+<ng-container *ngIf="version == '1'">
+  <div class="_mcw_bi_container">
+    <div
+      class="_mcw_bi_segments"
+      [ngClass]="{
+        _mcw_bi_horizontal: orientation === 'horizontal',
+        _mcw_bi_vertical: orientation === 'vertical'
+      }"
+      style="text-align: center"
+    >
+      <div class="_mcw_bi_segment">
+        <h2 class="_mcw_bi_header">
+          <i
+            class="_mcw_bi_icon"
+            [ngClass]="displayProperties.currentStatsState"
+          ></i>
+          {{ displayProperties.currentStats | percent }}
+        </h2>
+        <p class="_mcw_bi_paragraph">
+          {{ displayProperties.currentStatsText }}
+        </p>
+      </div>
+
+      <div class="_mcw_bi_segment">
+        <h2 class="_mcw_bi_header">
+          {{ displayProperties.domActive }}
+        </h2>
+        <p class="_mcw_bi_paragraph">{{ displayProperties.domActiveText }}</p>
+      </div>
+
+      <div class="_mcw_bi_segment">
+        <h2 class="_mcw_bi_header">
+          <i
+            class="_mcw_bi_icon"
+            [ngClass]="displayProperties.historyStatsState"
+          ></i>
+          {{ displayProperties.historyStats | currency }}
+        </h2>
+        <p class="_mcw_bi_paragraph">
+          {{ displayProperties.historyStatsText }}
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-container>

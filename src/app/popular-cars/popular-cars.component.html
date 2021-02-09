@@ -1,0 +1,110 @@
+<ng-container *ngIf="version === '1'">
+  <div class="_mcw_pc_container">
+    <div
+      class="_mcw_pc_col"
+      *ngIf="country !== 'null' && country !== undefined && country !== null"
+    >
+      <span class="_mcw_pc_bold _mcw_pc_title"
+        >Popular Cars in {{ country | uppercase }} Nationwide
+      </span>
+      <div class="_mcw_pc_entry" *ngFor="let entry of nationwidePopularCars">
+        <div class="_mcw_pc_entry_title" *ngIf="clickable === 'false'">
+          {{ entry.inventory_type | titlecase }} {{ entry.make | titlecase }}
+          {{ entry.model }}
+        </div>
+        <div class="_mcw_pc_entry_title" *ngIf="clickable === 'true'">
+          <a
+            [href]="
+              '/inventory/' +
+              entry.inventory_type +
+              '?make=' +
+              entry.make.toLowerCase().replace(' ', '_') +
+              '&model=' +
+              entry.model.toLowerCase().replace(' ', '_') +
+              '&country=' +
+              (country || 'us').toLowerCase().replace(' ', '_')
+            "
+          >
+            {{ entry.inventory_type | titlecase }} {{ entry.make | titlecase }}
+            {{ entry.model }}
+          </a>
+        </div>
+        <p>
+          <span class="_mcw_pc_bold">{{ entry.count | number }}</span> vehicles
+          starting from
+          <span class="_mcw_pc_bold">{{
+            entry.price_stats.min | currency
+          }}</span>
+        </p>
+        <div class="_mcw_pc_entry_stats">
+          <div>
+            <span class="_mcw_pc_bold">Average Price:</span>
+            {{ entry.price_stats.mean | currency }}
+          </div>
+          <div>
+            <span class="_mcw_pc_bold">Average Miles:</span>
+            {{ entry.miles_stats.mean | number }}
+          </div>
+          <div>
+            <span class="_mcw_pc_bold">Average DOM:</span>
+            {{ entry.dom_stats.mean | number }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_mcw_pc_col"
+      *ngIf="state !== 'null' && state !== undefined && state !== null"
+    >
+      <span class="_mcw_pc_bold _mcw_pc_title"
+        >Popular Cars in {{ state | uppercase }}</span
+      >
+      <div class="_mcw_pc_entry" *ngFor="let entry of statewidePopularCars">
+        <div class="_mcw_pc_entry_title" *ngIf="clickable === 'false'">
+          {{ entry.inventory_type | titlecase }} {{ entry.make | titlecase }}
+          {{ entry.model }}
+        </div>
+        <div class="_mcw_pc_entry_title" *ngIf="clickable === 'true'">
+          <a
+            [href]="
+              '/inventory/' +
+              entry.inventory_type +
+              '?make=' +
+              entry.make.toLowerCase().replace(' ', '_') +
+              '&model=' +
+              entry.model.toLowerCase().replace(' ', '_') +
+              '&country=' +
+              (country || 'us').toLowerCase().replace(' ', '_') +
+              '&state=' +
+              state.toLowerCase().replace(' ', '_')
+            "
+          >
+            {{ entry.inventory_type | titlecase }} {{ entry.make | titlecase }}
+            {{ entry.model }}
+          </a>
+        </div>
+        <p>
+          <span class="_mcw_pc_bold">{{ entry.count | number }}</span> vehicles
+          starting from
+          <span class="_mcw_pc_bold">{{
+            entry.price_stats.min | currency
+          }}</span>
+        </p>
+        <div class="_mcw_pc_entry_stats">
+          <div>
+            <span class="_mcw_pc_bold">Average Price:</span>
+            {{ entry.price_stats.mean | currency }}
+          </div>
+          <div>
+            <span class="_mcw_pc_bold">Average Miles:</span>
+            {{ entry.miles_stats.mean | number }}
+          </div>
+          <div>
+            <span class="_mcw_pc_bold">Average DOM:</span>
+            {{ entry.dom_stats.mean | number }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

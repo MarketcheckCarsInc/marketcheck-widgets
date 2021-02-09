@@ -1,0 +1,45 @@
+<ng-container *ngIf="version === '1'">
+  <div class="_mcw_csb_container">
+    <div class="_mcw_csb_head">
+      <div class="_mcw_csb_rating" title="{{ displayProperties.overall }}/5">
+        <i
+          *ngFor="let cls of displayProperties.overallClsArr"
+          class="_mcw_csb_icon {{ cls }}"
+        ></i>
+        <br />
+        Overall
+      </div>
+    </div>
+    <div class="_mcw_csb_ratings_container">
+      <div class="_mcw_csb_rating" title="{{ displayProperties.rollOver }}/5">
+        <i
+          *ngFor="let cls of displayProperties.rollOverClsArr"
+          class="_mcw_csb_icon {{ cls }}"
+        ></i>
+        <br />
+        Roll Over
+      </div>
+
+      <div class="_mcw_csb_rating" title="{{ displayProperties.sideImpact }}/5">
+        <i
+          *ngFor="let cls of displayProperties.sideImpactClsArr"
+          class="_mcw_csb_icon {{ cls }}"
+        ></i>
+        <br />
+        Side Impact
+      </div>
+
+      <div
+        class="_mcw_csb_rating"
+        title="{{ displayProperties.frontImpact }}/5"
+      >
+        <i
+          *ngFor="let cls of displayProperties.frontImpactClsArr"
+          class="_mcw_csb_icon {{ cls }}"
+        ></i>
+        <br />
+        Front Impact
+      </div>
+    </div>
+  </div>
+</ng-container>

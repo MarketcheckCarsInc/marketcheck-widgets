@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* THEME */
+._mcw_lh_container {
+  display: inline-block;
+  font-family: "Rubik", "sans-serif";
+  border: 1px solid #e2e2e2;
+  color: #333;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  ._mcw_lh_container {
+    width: 100%;
+  }
+}
+
+._mcw_lh_title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-top: 0.9rem;
+  text-align: center;
+}
+
+._mcw_lh_table {
+  padding: 0.5rem 1rem 1rem 1rem;
+  vertical-align: top;
+  text-align: left;
+  display: inline-block;
+}
+
+._mcw_lh_table td {
+  font-weight: 300;
+  padding: 0.5rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+._mcw_lh_table td a:visited,
+a:active,
+a {
+  text-decoration: none;
+  color: blue;
+  text-transform: capitalize;
+}
+
+._mcw_lh_label {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.mcw_lh_successclr {
+  background-color: #149b45;
+  border-radius: 3px;
+  display: block;
+  padding: 7px 8px 2px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: arial;
+  line-height: 13px;
+  max-width: 150px;
+}
+
+.mcw_lh_alertclr {
+  background-color: #e1124f;
+  border-radius: 3px;
+  display: block;
+  padding: 7px 8px 2px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: arial;
+  line-height: 13px;
+  max-width: 150px;
+}
+
+.mcw_lh_alertclr svg {
+  vertical-align: top;
+}
+.mcw_lh_successclr svg {
+  vertical-align: top;
+}
+.mcw_lh_successclr div,
+.mcw_lh_alertclr div {
+  display: inline-block;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 900";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.svg#fontawesome")
+      format("svg");
+}
+
+._mcw_lh_icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+}
+
+._mcw_lh_history:before {
+  font-family: "Font Awesome 5 900";
+  content: "\f1da";
+  padding-right: 10px;
+  font-size: 1em;
+}

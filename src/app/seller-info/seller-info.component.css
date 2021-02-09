@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@450&display=swap");
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* THEME */
+._mcw_si_container {
+  padding: 0.4rem;
+  display: inline-block;
+  font-family: "Rubik", "sans-serif";
+
+  text-align: center;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  max-width: 400px;
+  color: #333;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+._mcw_si_title {
+  font-size: 1.5rem;
+  font-weight: 450;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+  padding: 0.4rem;
+  padding-bottom: 0.2rem;
+}
+
+._mcw_si_website {
+  font-weight: 300;
+  padding: 0.7rem 0.3rem;
+  color: rgb(70, 70, 70);
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+._mcw_si_website > i {
+  margin-left: 5px;
+  vertical-align: super;
+}
+
+._mcw_si_rating_container {
+  padding: 0.4rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+._mcw_si_rating_container > div:last-child {
+  font-style: italic;
+}
+
+._mcw_si_rating {
+  padding: 0px 10px;
+  font-weight: 350;
+}
+._mcw_si_ratings_count {
+  font-weight: 300;
+  font-style: italic;
+  padding: 0px 10px;
+}
+
+._mcw_si_more_info {
+  padding: 0.5rem 1.4rem;
+  text-align: left;
+}
+._mcw_si_address,
+._mcw_si_contact {
+  padding: 0.5rem 0rem;
+  font-weight: 300;
+  color: rgb(70, 70, 70);
+  word-spacing: 2px;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 900";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.svg#fontawesome")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 400";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-regular-400.svg#fontawesome")
+      format("svg");
+}
+
+._mcw_si_icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  vertical-align: baseline;
+}
+._mcw_si_share::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f35d";
+  vertical-align: super;
+  font-size: 0.7rem;
+}
+
+._mcw_si_star::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f005";
+  color: #f9bc05;
+}
+._mcw_si_star_half::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f5c0";
+  color: #f9bc05;
+}
+
+._mcw_si_star_border::before {
+  font-family: "Font Awesome 5 400";
+  content: "\f005";
+}
+
+._mcw_si_location::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f3c5";
+  margin-right: 10px;
+}
+
+._mcw_si_phone::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f879";
+  margin-right: 10px;
+}

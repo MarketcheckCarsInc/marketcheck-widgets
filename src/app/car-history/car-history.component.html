@@ -1,0 +1,249 @@
+<ng-container *ngIf="version == '1'">
+  <div class="_mcw_lh_container">
+    <div class="_mcw_lh_title">
+      <i class="_mcw_lh_icon _mcw_lh_history"></i> {{ title }}
+    </div>
+    <ng-container *ngFor="let colIdx of colArr">
+      <table class="_mcw_lh_table">
+        <thead>
+          <tr>
+            <th class="_mcw_lh_label">S.No.</th>
+            <th class="_mcw_lh_label">Date</th>
+            <th class="_mcw_lh_label">Price</th>
+            <th class="_mcw_lh_label">Miles</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let x of historyResponse; index as i">
+          <ng-container
+            *ngIf="
+              i < countInt &&
+              i < Math.ceil((colIdx + 1) * (countInt / col)) &&
+              i >= Math.ceil(colIdx * (countInt / col))
+            "
+          >
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>
+                {{ x.scraped_at_date | date }} -
+                {{ x.last_seen_at_date | date }}
+                <br />
+                <a
+                  style="font-size: 14px"
+                  href="http://{{ x.source }}"
+                  target="_blank"
+                  title="visit Dealer site"
+                >
+                  {{ x.seller_name }}
+                  <img
+                    style="width: 18px; color: blue"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVGhD7Za7S8NAAIf7H/kXmESdpU2tuCi+QAQnRcVBBxfRQXyhILgo1MG3eIm2FSyKLwRHraItPjY3F2sLPXt60ba56uVMm2u5D76hCSS/D44Sl0AgEJQfiluvkVUQkDxayEkrvVoDnsSG7AGLsqpBp5VUEMaT2EiH+EkPLrbpkCM8iY2yCanvDJ+RHlxsa9v2Y3gSG6PLsfDwwi102pGl+wiexEYwmvCHoknotMFo8n9HS4TYrAgxECE2K0IMRIjN2h4Crt/gysUrk4G7RNY4K9ofcvUGG3uOid9Df7l2+Zo1zooFOVpaJA6bek+IY3+TuxCkno5p7j8lDs4nlyFI/SYOWwfOiaNJchuC3Lt9h/Vdh8ThuXIdMuaPQcVLHp4rtyFWIpBchliNQHIXwhKB5CqEJqLatwt9nWHTdW5CaCNmtp+/vgC6s78AuAihiaiq0+H01vP3y3NjHA+hiVBQxOaTaUBmjKMhg7NX5zQRUxvmCEMjxrEQyQM6ZIqIyfVH4sszRTH6dZx4j0bmkM8IFaRI4w1RxARFhB0yhchu0EIVsfpAfGkhZAqpUncqJFV7IQUgUcT4SvEikMxHK1+MomqpobnIQfA+OV9MQ9FEH55mHXMMSEkevQ3fLi1+YkCq0g3a8eXSBMWgPwD8UyAQCAT/wOX6AKThEpdyXDBXAAAAAElFTkSuQmCC"
+                  />
+                </a>
+              </td>
+
+              <td>
+                {{ (x.price | currency) || "NA" }}
+                <br />
+                <span
+                  [ngClass]="
+                    historyResponse[i].price - historyResponse[i + 1].price < 0
+                      ? 'mcw_lh_successclr'
+                      : 'mcw_lh_alertclr'
+                  "
+                  *ngIf="
+                    historyResponse[i + 1] &&
+                    historyResponse[i + 1].price &&
+                    historyResponse[i + 1].price != historyResponse[i].price &&
+                    x.price
+                  "
+                  >$
+                  {{ historyResponse[i].price - historyResponse[i + 1].price }}
+                  <div
+                    *ngIf="
+                      historyResponse[i].price - historyResponse[i + 1].price <
+                      0
+                    "
+                  >
+                    <svg
+                      width="8"
+                      fill="#ffffff"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 386.257 386.257"
+                      style="enable-background: new 0 0 386.257 386.257"
+                      xml:space="preserve"
+                    >
+                      <polygon
+                        points="0,96.879 193.129,289.379 386.257,96.879 "
+                      />
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                    </svg>
+                  </div>
+                  <div
+                    *ngIf="
+                      historyResponse[i].price - historyResponse[i + 1].price >
+                      0
+                    "
+                  >
+                    <svg
+                      fill="#ffffff"
+                      version="1.1"
+                      id="Capa_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      width="8"
+                      viewBox="0 0 255 255"
+                      style="enable-background: new 0 0 255 255"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <g id="arrow-drop-up">
+                          <polygon points="0,191.25 127.5,63.75 255,191.25" />
+                        </g>
+                      </g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+
+              <td>
+                {{ x.miles || "NA" }}
+                <br />
+                <span
+                  [ngClass]="
+                    historyResponse[i].miles - historyResponse[i + 1].miles < 0
+                      ? 'mcw_lh_successclr'
+                      : 'mcw_lh_alertclr'
+                  "
+                  *ngIf="
+                    historyResponse[i + 1] &&
+                    historyResponse[i + 1].miles &&
+                    historyResponse[i + 1].miles != historyResponse[i].miles &&
+                    x.miles
+                  "
+                  >{{ historyResponse[i].miles - historyResponse[i + 1].miles }}
+                  mi
+                  <div
+                    *ngIf="
+                      historyResponse[i].miles - historyResponse[i + 1].miles >
+                      0
+                    "
+                  >
+                    <svg
+                      fill="#ffffff"
+                      version="1.1"
+                      id="Capa_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      width="8"
+                      viewBox="0 0 255 255"
+                      style="enable-background: new 0 0 255 255"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <g id="arrow-drop-up">
+                          <polygon points="0,191.25 127.5,63.75 255,191.25" />
+                        </g>
+                      </g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                    </svg>
+                  </div>
+                  <div
+                    *ngIf="
+                      historyResponse[i].miles - historyResponse[i + 1].miles <
+                      0
+                    "
+                  >
+                    <svg
+                      width="8"
+                      fill="#ffffff"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 386.257 386.257"
+                      style="enable-background: new 0 0 386.257 386.257"
+                      xml:space="preserve"
+                    >
+                      <polygon
+                        points="0,96.879 193.129,289.379 386.257,96.879 "
+                      />
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+</ng-container>

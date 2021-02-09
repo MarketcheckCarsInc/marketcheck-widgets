@@ -1,0 +1,93 @@
+<ng-container *ngIf="version == '1'">
+  <div class="_mcw_cc_container">
+    <!-- carousel start -->
+    <div class="carousel">
+      <button
+        class="carousel_button carousel_button--left"
+        (click)="showPreviousImage()"
+        *ngIf="displayProperties.counter > 0"
+        title="Previous"
+      >
+        &#10094;
+      </button>
+
+      <div class="carousel_track_container">
+        <ul class="carousel_track">
+          <li
+            class="carousel_slide"
+            *ngFor="
+              let photo_url of displayProperties.photo_links;
+              let i = index
+            "
+            title=""
+          >
+            <img
+              class="carousel_image"
+              [src]="photo_url"
+              alt="image"
+              *ngIf="i == displayProperties.counter"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <button
+        class="carousel_button carousel_button--right"
+        (click)="showNextImage()"
+        *ngIf="
+          displayProperties.counter < displayProperties.len_photo_links - 1
+        "
+        title="Next"
+      >
+        &#10095;
+      </button>
+
+      <div
+        class="carousel_curr_image"
+        *ngIf="displayProperties.len_photo_links > 0"
+      >
+        {{ displayProperties.counter + 1 }} /
+        {{ displayProperties.len_photo_links }}
+      </div>
+    </div>
+    <!-- carousel end -->
+
+    <div class="container_veh_info">
+      <div class="_mcw_cc_heading" [title]="displayProperties.name">
+        {{ displayProperties.name }}
+      </div>
+
+      <div class="_mcw_cc_row">
+        <label>
+          <i class="_mcw_cc_icon _mcw_cc_location"></i>
+          Location
+        </label>
+        <span
+          >{{ displayProperties.city }}, {{ displayProperties.state }}
+        </span>
+      </div>
+
+      <div class="_mcw_cc_row">
+        <label>
+          <i class="_mcw_cc_icon _mcw_cc_route"></i>
+          Miles
+        </label>
+        <span>{{ displayProperties.miles }}</span>
+      </div>
+
+      <div class="_mcw_cc_row">
+        <label>
+          <i class="_mcw_cc_icon _mcw_cc_price"></i>
+          Price
+        </label>
+        <span>{{ displayProperties.price | currency }}</span>
+      </div>
+    </div>
+
+    <div class="footer" *ngIf="showMoreButton == 'true'">
+      <a [href]="showMoreHref" style="text-decoration: none"
+        ><button class="_mcw_cc_footer_button">{{ showMoreText }}</button></a
+      >
+    </div>
+  </div>
+</ng-container>

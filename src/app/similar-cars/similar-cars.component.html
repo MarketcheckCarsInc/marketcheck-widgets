@@ -1,0 +1,65 @@
+<ng-container *ngIf="version == '1'">
+<div  class="_mcw_sc_product_slider">
+
+  <!-- prev button -->
+  <button class="_mcw_sc_slider_btn _mcw_sc_slider_btn--prev" *ngIf="nextClicks > 0" (click)="prev()" >&#10094;</button>
+
+  <div class="_mcw_sc_slider_container"  #container>
+    
+    <!-- slides -->
+    <div class="_mcw_sc_slide_box _mcw_sc_fade" #slide *ngFor="let l of similar_listings; let i = index" >
+      
+      <div class="_mcw_sc_slide_image_container">
+        <ng-container *ngIf="l.media && l.media.photo_links">
+          <img class="_mcw_sc_slide_image" *ngIf="l.media"  [src]="l.media.photo_links[0]">
+        </ng-container>
+      </div>
+
+      <div class="_mcw_sc_slide_desc_container">
+        <div class="_mcw_sc_slide_title" [title]="l.heading">
+          {{ l.heading || ((l.inventory_type | uppercase)+' '+l.build.year+' '+(l.build.make | titlecase)+' '+(l.build.model | titlecase)+' '+l.build.trim) }}
+        </div>
+        
+        <div class="_mcw_sc_slide_price">  {{ (l.price | currency )|| 'N/A'}} </div>
+        
+        <div class="_mcw_sc_row">
+          <span class="_mcw_sc_label">
+            <i class="_mcw_sc_icon _mcw_sc_location"></i>
+            Location
+          </span>
+          <span class="_mcw_sc_val" [title]="l.dealer.city+', '+ l.dealer.state">{{l.dealer.city || 'N/A'}}, {{l.dealer.state || 'N/A'}}</span>
+        </div>
+
+        <div class="_mcw_sc_row">
+          <span class="_mcw_sc_label">
+            <i class="_mcw_sc_icon _mcw_sc_route"></i>
+            Miles
+          </span>
+          <span class="_mcw_sc_val">{{ l.miles || 'N/A' }}</span>
+        </div>
+
+        <div class="_mcw_sc_row">
+          <span class="_mcw_sc_label">
+            <i class="_mcw_sc_icon _mcw_sc_car"></i>
+            VIN
+          </span>
+          <span class="_mcw_sc_val">{{ l.vin || 'N/A' }}</span>
+        </div>
+
+      </div>
+
+      <div class="_mcw_sc_slide_footer">
+        <a [href]="'//'+ vdp_root+ '/' + ((l.build.year +'_'+ l.build.make.replace(' ', '_') + '_'+ l.build.model.replace(' ', '_')) | lowercase)+'_'+l.id "
+            [target]="target"
+        >
+          <button> {{ displayProperties.footerBtnTitle }}</button>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- next button -->
+  <button class="_mcw_sc_slider_btn _mcw_sc_slider_btn--next"  *ngIf="nextClicks < nextClicksMax" (click)="next()" >&#10095;</button>
+</div>
+</ng-container>

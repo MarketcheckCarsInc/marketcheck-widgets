@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* THEME */
+._mcw_cf_container {
+  font-family: "Rubik", "sans-serif";
+  width: 50%;
+  color: #333;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+._mcw_cf_title {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 0.5rem;
+}
+
+._mcw_cf_title > span {
+  transform: translateX(-50%);
+}
+._mcw_cf_features_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 0.7rem;
+}
+._mcw_cf_col {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  ._mcw_cf_container {
+    width: 100%;
+  }
+  ._mcw_cf_features_container {
+    flex-direction: column;
+  }
+  ._mcw_cf_col {
+    width: 100%;
+  }
+}
+._mcw_cf_features {
+  --fs: 1.1rem;
+  --li-padding: 0.7rem;
+  --lh: var(--fs);
+
+  line-height: var(--lh);
+  height: calc(calc(var(--lh) + var(--li-padding) * 2) * 5);
+
+  overflow: hidden;
+  font-size: var(--fs);
+
+  list-style: circle;
+  margin: 0 !important;
+}
+
+._mcw_cf_feature {
+  padding: var(--li-padding);
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+._mcw_cf_btn_show_more {
+  position: relative;
+  left: 50%;
+  outline: none;
+  border: 1px solid rgb(80, 80, 80);
+  font-weight: 500;
+
+  font-size: 1rem;
+  background: rgb(255, 255, 255);
+  color: rgb(80, 80, 80);
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+._mcw_cf_btn_show_more:hover {
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+._mcw_show {
+  height: auto;
+  overflow: visible;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 900";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff2")
+      format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.woff")
+      format("woff"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.ttf")
+      format("truetype"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/webfonts/fa-solid-900.svg#fontawesome")
+      format("svg");
+}
+
+._mcw_cf_icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.7rem;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+._mwc_cf_carside::before {
+  font-family: "Font Awesome 5 900";
+  content: "\f5e4";
+}
