@@ -14,3 +14,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build Elements
 
 Run `npm run build-elements` to generate your elements single js file which is created at `./elements` directory. To update name of build file, you need to make changes to `./buildElements.js`
+
+Join the discussion @[Marketcheck forums](https://forums.marketcheck.com/) 
