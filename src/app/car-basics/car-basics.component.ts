@@ -12,6 +12,7 @@ export class CarBasicsComponent implements OnInit {
   @Input() vin: string;
   @Input() title: string = 'Vehicle Basics';
   @Input() version: string = '1';
+  @Input() country: string = 'US';
 
   displayproperties = {
     vin: 'N/A',
@@ -34,6 +35,7 @@ export class CarBasicsComponent implements OnInit {
     this.apiService
       .getCarActive({
         vin: this.vin,
+        country: this.country,
         access_token: this.accessToken,
         identity: 'mc-car-basics',
       })
@@ -41,9 +43,9 @@ export class CarBasicsComponent implements OnInit {
         next: (response) => {
           if (response.listings.length > 0) {
             this.displayproperties.vin = response.listings[0]['vin'];
-            this.displayproperties.miles = response.listings[0][
-              'miles'
-            ].toString();
+            this.displayproperties.miles = response.listings[0]['miles']
+              ? response.listings[0]['miles'].toString()
+              : 'N/A';
             this.displayproperties.engine =
               response.listings[0]['build']['engine'];
             this.displayproperties.drivetrain =
@@ -52,7 +54,9 @@ export class CarBasicsComponent implements OnInit {
               response.listings[0]['build']['body_type'];
             this.displayproperties['stock no'] = response.listings[0][
               'stock_no'
-            ].toString();
+            ]
+              ? response.listings[0]['stock_no'].toString()
+              : 'N/A';
             this.displayproperties['inventory type'] =
               response.listings[0]['inventory_type'];
             this.displayproperties.trim = response.listings[0]['build']['trim'];

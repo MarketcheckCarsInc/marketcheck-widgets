@@ -23,7 +23,7 @@ export class TimeOnMarketComponent implements OnInit, AfterViewInit {
   @Input() vin: string;
   @Input("car_type") carType: string;
   @Input() location: string;
-
+  @Input() country: string = 'US';
   @Input() height: string;
   @Input() width: string;
   @Input() layout: string = "semi-circle";
@@ -91,6 +91,7 @@ export class TimeOnMarketComponent implements OnInit, AfterViewInit {
     let params = {
       access_token: this.accessToken,
       vins: this.vin,
+      country: this.country,
       rows: 0,
       stats: "dom",
       match: "year,make,model,trim",

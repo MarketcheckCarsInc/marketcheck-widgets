@@ -13,6 +13,7 @@ export class BuyerIntelligenceComponent implements OnInit {
   @Input() orientation: string = 'horizontal';
   @Input() version: string = '1';
   @Input() price: string;
+  @Input() country: string = 'US';
 
   displayProperties = {
     title: 'Buyer Intelligence',
@@ -35,7 +36,7 @@ export class BuyerIntelligenceComponent implements OnInit {
       throw new Error('[Buyer-Intelligence] Required params Missing.');
     }
     this.bi
-      .process(this.vin, this.accessToken, parseInt(this.price))
+      .process(this.vin, this.accessToken, parseInt(this.price), this.country)
       .subscribe(({ currentStats, historyStats, domActive }) => {
         this.displayProperties.currentStats = currentStats;
         let stateTemp = { color: '_mcw_bi_blue', arrow: '_mcw_bi_arrow_up' };
@@ -76,7 +77,9 @@ export class BuyerIntelligenceComponent implements OnInit {
           stateTemp
         );
 
-        this.displayProperties.domActive = domActive.toString();
+        this.displayProperties.domActive = domActive
+          ? domActive.toString()
+          : 'N/A';
       });
   }
 

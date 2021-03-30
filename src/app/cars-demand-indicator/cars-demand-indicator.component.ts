@@ -11,6 +11,7 @@ export class CarsDemandIndicatorComponent implements OnInit {
   @Input('access_token') accessToken: string;
   @Input() vin: string;
   @Input() location: string;
+  @Input() country: string = 'US';
 
   @Input() orientation: string = 'horizontal';
   @Input() version: string = '1';
@@ -38,6 +39,7 @@ export class CarsDemandIndicatorComponent implements OnInit {
     this.cdi
       .process(
         this.vin,
+        this.country,
         this.accessToken,
         this.location['latitude'],
         this.location['longitude'],

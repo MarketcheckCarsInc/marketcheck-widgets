@@ -12,7 +12,7 @@ interface calculatedResponse {
 })
 export class VdpFeaturesSection {
   constructor(private apiService: ApiService) {}
-  process(vin: string, accessToken: string) {
+  process(vin: string, accessToken: string, country: string) {
     let searchResponse: ApiCarActiveListing;
     let listingResponse: ApiListingCarResponse[];
 
@@ -20,6 +20,7 @@ export class VdpFeaturesSection {
       this.apiService
         .getCarActive({
           vin: vin,
+          country: country,
           access_token: accessToken,
           identity: "mc-vdp-features",
         })
@@ -35,6 +36,7 @@ export class VdpFeaturesSection {
               .getListingByID(searchResponse.id, {
                 access_token: accessToken,
                 rows: 100,
+                country: country,
                 identity: "mc-vdp-features",
               })
               .subscribe({

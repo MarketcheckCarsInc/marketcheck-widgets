@@ -15,7 +15,7 @@ interface calculatedResponse {
 export class BuyerIntelligence {
   constructor(private apiService: ApiService) {}
 
-  process(vin: string, accessToken: string, price: number) {
+  process(vin: string, accessToken: string, price: number, country: string) {
     let carSelect: ApiCarActiveListing;
     let similarListings: ApiCarActiveListing[];
     let historyResponse: ApiCarHistoryListing[];
@@ -24,6 +24,7 @@ export class BuyerIntelligence {
         this.apiService
           .getCarActive({
             vin: vin,
+            country: country,
             access_token: accessToken,
             identity: "mc-buyer-intelligence",
           })
@@ -38,6 +39,7 @@ export class BuyerIntelligence {
               this.apiService
                 .getCarActive({
                   vins: vin,
+                  country: country,
                   access_token: accessToken,
                   latitude: carSelect.dealer.latitude,
                   longitude: carSelect.dealer.longitude,
@@ -117,9 +119,9 @@ export class BuyerIntelligence {
     domActive = carSelect.dom_active;
 
     return {
-      currentStats,
-      historyStats,
-      domActive,
+      currentStats: currentStats ? currentStats : 0,
+      historyStats: historyStats ? historyStats : 0,
+      domActive: domActive ? domActive : 0,
     };
   }
 }

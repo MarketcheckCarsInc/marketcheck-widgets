@@ -11,7 +11,12 @@ import { Loader } from '@googlemaps/js-api-loader';
 export class SellerInfo {
   constructor(private apiService: ApiService, private http: HttpClient) {}
 
-  process(vin: string, accessToken: string, google_key: string) {
+  process(
+    vin: string,
+    accessToken: string,
+    google_key: string,
+    country: string
+    ) {
     let similarListings: ApiCarActiveListing[];
 
     let processObservable = new Observable((subscriber) => {
@@ -25,6 +30,7 @@ export class SellerInfo {
       this.apiService
         .getCarActive({
           access_token: accessToken,
+          country: country,
           vin: vin,
           identity: 'mc-seller-info',
         })

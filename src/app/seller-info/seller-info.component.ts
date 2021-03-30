@@ -12,6 +12,7 @@ export class SellerInfoComponent implements OnInit {
   @Input() access_token: string;
   @Input() vin: string;
   @Input() google_key: string;
+  @Input() country: string = 'US';
 
   displayProperties = {
     name: 'N/A',
@@ -36,7 +37,7 @@ export class SellerInfoComponent implements OnInit {
       throw new Error(`[Seller-Info] Required params Missing.`);
     }
     this.si
-      .process(this.vin, this.access_token, this.google_key)
+      .process(this.vin, this.access_token, this.google_key, this.country)
       .subscribe(
         ({ dealer, rating, reviews, user_ratings_total, maps_url }) => {
           this.displayProperties.name = dealer.name;

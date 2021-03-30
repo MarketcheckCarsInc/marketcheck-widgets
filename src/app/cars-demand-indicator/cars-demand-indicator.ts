@@ -11,6 +11,7 @@ export class CarsDemandIndicator {
 
   process(
     vin: string,
+    country: string,
     accessToken: string,
     latitude: number,
     longitude: number,
@@ -23,6 +24,7 @@ export class CarsDemandIndicator {
       this.apiService
         .getCarMDS({
           vin: vin,
+          country: country,
           access_token: accessToken,
           latitude: latitude,
           longitude: longitude,

@@ -26,6 +26,7 @@ export class SimilarCarsComponent implements OnInit, AfterViewInit {
 
   @Input("access_token") accessToken: any;
   @Input() vin: string;
+  @Input() country: string = 'US';
   @Input("vdp_root") vdp_root: string;
   @Input() target: string = "_blank";
   @Input("car_type") car_type: string;
@@ -54,6 +55,7 @@ export class SimilarCarsComponent implements OnInit, AfterViewInit {
     const params = Object.assign(
       {
         vins: this.vin,
+        country: this.country,
         access_token: this.accessToken,
         car_type: this.car_type,
         rows: this.rows,

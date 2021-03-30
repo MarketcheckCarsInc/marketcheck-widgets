@@ -12,6 +12,7 @@ export class CarCardComponent implements OnInit {
   @Input('access_token') accessToken: any;
   @Input() vin: string;
   @Input() dealer: string;
+  @Input() country: string = 'US';
 
   @Input('show_more_button') showMoreButton: string = 'true';
   @Input('show_more_href') showMoreHref: string = '#';
@@ -38,6 +39,7 @@ export class CarCardComponent implements OnInit {
     }
     let req_params = {
       vin: this.vin,
+      country: this.country,
       access_token: this.accessToken,
       rows: 1,
       identity: 'mc-car-card',
@@ -55,14 +57,33 @@ export class CarCardComponent implements OnInit {
       },
       complete: () => {
         if (this.similarListings.length > 0) {
-          this.displayProperties.miles = this.similarListings[0].miles.toString();
-          this.displayProperties.name = this.similarListings[0].heading;
-          this.displayProperties.price = this.similarListings[0].price;
-          this.displayProperties.city = this.similarListings[0].dealer.city;
-          this.displayProperties.state = this.similarListings[0].dealer.state;
-          this.displayProperties.photo_links = this.similarListings[0].media.photo_links;
-          this.displayProperties.len_photo_links = this.similarListings[0].media.photo_links.length;
-          this.displayProperties.inv_type = this.similarListings[0].inventory_type;
+          this.displayProperties.miles = this.similarListings[0].miles
+            ? this.similarListings[0].miles.toString()
+            : 'N/A';
+          this.displayProperties.name = this.similarListings[0].heading
+            ? this.similarListings[0].heading
+            : 'N/A';
+          this.displayProperties.price = this.similarListings[0].price
+            ? this.similarListings[0].price
+            : 0;
+          this.displayProperties.city = this.similarListings[0].dealer.city
+            ? this.similarListings[0].dealer.city
+            : 'N/A';
+          this.displayProperties.state = this.similarListings[0].dealer.state
+            ? this.similarListings[0].dealer.state
+            : 'N/A';
+          this.displayProperties.photo_links = this.similarListings[0].media
+            .photo_links
+            ? this.similarListings[0].media.photo_links
+            : [];
+          this.displayProperties.len_photo_links = this.similarListings[0].media
+            .photo_links
+            ? this.similarListings[0].media.photo_links.length
+            : 0;
+          this.displayProperties.inv_type = this.similarListings[0]
+            .inventory_type
+            ? this.similarListings[0].inventory_type
+            : 'N/A';
         }
       },
     });

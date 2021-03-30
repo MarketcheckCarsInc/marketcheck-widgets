@@ -12,6 +12,7 @@ export class VdpFeaturesComponent implements OnInit {
   @Input('access_token') accessToken: string;
   @Input() title: string = 'Features';
   @Input() version: string = '1';
+  @Input() country: string = 'US';
 
   listingId: any;
   features: string[];
@@ -24,7 +25,7 @@ export class VdpFeaturesComponent implements OnInit {
     if (!this.vin || !this.accessToken) {
       throw new Error('[Car-Features] Required params Missing.');
     }
-    this.vdp.process(this.vin, this.accessToken).subscribe(
+    this.vdp.process(this.vin, this.accessToken, this.country).subscribe(
       ({ features }) => {
         this.features = features;
       },

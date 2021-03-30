@@ -97,8 +97,16 @@ export class FuelEconomyComponent implements OnInit, AfterViewInit {
       ctx.textAlign = "left";
       ctx.textBaseline = "middle";
       ctx.font = "bold 52px sans-serif";
-      ctx.fillText(data.highway_mpg.toString(), 65, 85);
-      ctx.fillText(data.city_mpg.toString(), 65 + 47 + 120, 85);
+      ctx.fillText(
+        data.highway_mpg ? data.highway_mpg.toString() : 'N/A',
+        65,
+        85
+      );
+      ctx.fillText(
+        data.city_mpg ? data.city_mpg.toString() : 'N/A',
+        65 + 47 + 120,
+        85
+      );
 
       ctx.font = "bold 16px sans-serif";
       ctx.fillText("MPG", 75, 120);
@@ -135,8 +143,16 @@ export class FuelEconomyComponent implements OnInit, AfterViewInit {
       ctx.textAlign = "left";
       ctx.textBaseline = "middle";
       ctx.font = "bold 52px sans-serif";
-      ctx.fillText(data.highway_mpg.toString(), 90, 60);
-      ctx.fillText(data.city_mpg.toString(), 90, 60 + 95);
+      ctx.fillText(
+        data.highway_mpg ? data.highway_mpg.toString() : 'N/A',
+        90,
+        60
+      );
+      ctx.fillText(
+        data.city_mpg ? data.city_mpg.toString() : 'N/A',
+        90,
+        60 + 95
+      );
 
       ctx.font = "16px sans-serif";
       ctx.fillText("HIGHWAY MPG", 65, 60 + 40);

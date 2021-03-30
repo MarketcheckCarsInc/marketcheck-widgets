@@ -31,6 +31,7 @@ export class PriceMilesPlotComponent implements OnInit, AfterViewInit {
   @Input() price: string;
   @Input() match: string = "year,make,model";
   @Input() location: string;
+  @Input() country: string = 'US';
   @Input("car_type") carType: string;
   @Input() version: string = "1";
   @Input("max_similar_listings") maxSimilarListing: string = "50";
@@ -77,6 +78,7 @@ export class PriceMilesPlotComponent implements OnInit, AfterViewInit {
 
     let params = {
       vins: this.vin,
+      country: this.country,
       access_token: this.accessToken,
       rows: 50,
       match: this.match,
